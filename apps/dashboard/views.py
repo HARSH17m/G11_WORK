@@ -22,6 +22,7 @@ def insert(request):
             content = content_
         )
         new_post.save()
+        return redirect('show')
 
     return render(request,'dashboard/insert.html')
 
