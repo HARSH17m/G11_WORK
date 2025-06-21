@@ -1,11 +1,12 @@
-from django.urls import path
-# from .views import *
-from . import views
+from django.urls import path, include
+from .views import *
 
 urlpatterns = [
-    # path('', views.index, name='index')
-    path('', views.show, name='show'),
-    path('insert/', views.insert, name='insert'),
-    path('update-post/<int:post_id>', views.update_post, name='update_post'),
-    path('delete-post/<int:post_id>', views.delete_post, name='delete_post'),
+    path('', login, name='login'),
+    path('signup/', signup, name='signup'),
+    path('forgot-password/', forgot_password, name='forgot_password'),
+    path('email-verify/', email_verify, name='email_verify'),
+    path('dashboard/', index, name='index'),
+    path('profile/', profile, name='profile'),
+    path('logout/', logout, name='logout'),
 ]
